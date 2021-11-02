@@ -9,7 +9,7 @@ function TodoGroup() {
     return (
         <div>
             {todoList.map((item, index) => (
-                <TodoItem key={item.id} todo={item}/>
+                <TodoItem key={item.id} todo={item} index={index}/>
             ))}
         </div>
     )
