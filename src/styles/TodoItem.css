@@ -8,13 +8,12 @@
     margin-right: 400px;
     margin-left: 400px;
     font-size: 18pt;
-    display: flex;
-    justify-content: space-between;
 }
 
 .TodoItem-button{
     font-size: 16px;
     vertical-align: 3px;
+    float: right;
 }
 
 .TodoItem-text{

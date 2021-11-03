@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { API_POST } from "../apis/todos";
 import { APPEND_TODOS } from '../reducers/todoReducer'
 import '../styles/TodoGenerator.css'
+import 'antd/dist/antd.css';
+
+import { Button } from 'antd';
 
 function TodoGenerator() {
     const [todoString, setToDoString] = useState("")
@@ -19,7 +22,7 @@ function TodoGenerator() {
     return (
         <div className='TodoGenerator'>
             <span>New Todo: <input value={todoString} onChange={updateString}></input></span>
-            <button onClick={updateToStore}>Add</button>
+            <Button type="primary" onClick={updateToStore}>Add</Button>
         </div>
     )
 }
