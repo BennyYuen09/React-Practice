@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import TodoGroup from './TodoGroup'
 import TodoGenerator from './TodoGenerator'
 import '../styles/TodoList.css'
-import api from "../apis/api";
 import { useDispatch } from "react-redux";
 import { INIT_TODOS } from "../reducers/todoReducer";
 import { API_GET } from "../apis/todos";

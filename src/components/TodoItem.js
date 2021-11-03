@@ -8,8 +8,9 @@ import { API_DELETE, API_PUT } from "../apis/todos";
 import { CloseCircleOutlined, EditOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import { Modal } from 'antd';
+import { Input } from 'antd';
 
-function TodoItem({ todo, index }) {
+function TodoItem({ todo }) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const text = todo.text
     const id = todo.id;
@@ -52,11 +53,12 @@ function TodoItem({ todo, index }) {
 
     return (
         <div className='TodoItem' >
-            <span className={textClass} onClick={changeState}>{index + 1}. {text}</span>
+            <span className={textClass} onClick={changeState}>{text}</span>
             <CloseCircleOutlined className='TodoItem-button' onClick={remove} />
+
             <EditOutlined className='TodoItem-button' onClick={showModal} />
             <Modal title="Please type the new Todo content:" visible={isModalVisible} onOk={edit} onCancel={handleCancel}>
-                <input value={newString} onChange={(event) => setNewString(event.target.value)}></input>
+                <Input value={newString} onChange={(event) => setNewString(event.target.value)} />
             </Modal>
         </div>
     )

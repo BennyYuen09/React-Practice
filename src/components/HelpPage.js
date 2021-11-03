@@ -1,7 +1,7 @@
 const HelpPage = () => {
     return (
         <div>
-            <h1>Help</h1>
+            <h1 style={{fontSize: '20pt'}}>Help</h1>
             <ol>
                 <li>You can add the new Todo item through the input box at the bottom wit a generate button.</li>
                 <li>You can mark the Todo Item as done by click on the item.</li>

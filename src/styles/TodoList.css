@@ -1,4 +1,8 @@
 .TodoList-title{
     background-color: rgba(103, 188, 221, 0.726);
     font-size: 20pt;
+    border-style: solid;
+    border-width: 2px;
+    margin-right: 300px;
+    margin-left: 300px;
 }
