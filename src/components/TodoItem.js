@@ -1,24 +1,35 @@
+import classNames from "classnames";
 import React from "react";
 import { useDispatch } from "react-redux";
 import '../styles/TodoItem.css'
+import { REMOVE_TODOS, CHANGE_TODOS } from '../reducers/todoReducer'
+import { API_DELETE, API_PUT } from "../apis/todos";
 
 function TodoItem({ todo, index }) {
-    const text = (todo.finished) ? <del>{todo.text}</del> : todo.text
+    //(todo.finished) ? <del>{todo.text}</del> :
+    const text = todo.text
     const id = todo.id;
     const dispatch = useDispatch();
 
+    const textClass = classNames({
+        'TodoItem-text': true,
+        'TodoItem-textDel': todo.finished
+    })
+
     function remove() {
-        dispatch({ type: 'removeTodoString', payload: id })
+        API_DELETE(id)
+            .then(response => dispatch({ type: REMOVE_TODOS, payload: response.data }));
     }
 
     function changeState() {
-        dispatch({ type: 'changeState', payload: id })
+        API_PUT(id, !todo.finished)
+            .then(response => dispatch({ type: CHANGE_TODOS, payload: response.data }));
     }
 
     return (
-        <div className='TodoItem'>
-            <span className='TodoItem-text' onClick={changeState}>{index + 1}. {text}</span>
-            <button className='TodoItem-button' onClick={remove}>X</button>            
+        <div className='TodoItem' onClick={changeState}>
+            <span className={textClass}>{index + 1}. {text}</span>
+            <button className='TodoItem-button' onClick={remove}>X</button>
         </div>
     )
 }

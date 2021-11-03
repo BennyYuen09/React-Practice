@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { API_POST } from "../apis/todos";
+import { APPEND_TODOS } from '../reducers/todoReducer'
+import '../styles/TodoGenerator.css'
 
 function TodoGenerator() {
     const [todoString, setToDoString] = useState("")
@@ -10,12 +13,11 @@ function TodoGenerator() {
     }
 
     function updateToStore(){
-        dispatch({type:'assignTodoString', payload: todoString});
-        dispatch({type:'incrementTotalNum'});
+        API_POST(todoString).then(response => dispatch({type: APPEND_TODOS, payload: response.data}))
     }
 
     return (
-        <div>
+        <div className='TodoGenerator'>
             <span>New Todo: <input value={todoString} onChange={updateString}></input></span>
             <button onClick={updateToStore}>Add</button>
         </div>

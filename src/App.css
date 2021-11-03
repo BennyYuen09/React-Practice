@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.App-link {
+  margin: 2px;
+  font-size: 20pt;
+  color: rgb(65, 154, 236);
+}
