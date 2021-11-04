@@ -3,7 +3,7 @@ const initState = { todoList: [] };
 const todoReducer = (state = initState, action) => {
     switch (action.type) {
         case INIT_TODOS:
-            return { todoList: action.payload };
+            return todoInit(state, action);
 
         case APPEND_TODOS:
             return todoAppend(state, action);
@@ -18,6 +18,11 @@ const todoReducer = (state = initState, action) => {
             return state;
     }
 }
+
+const todoInit = (state, action) => {
+    return { todoList: action.payload };
+}
+
 
 const todoAppend = (state, action) => {
     return { todoList: [...state.todoList, action.payload] };
