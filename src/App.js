@@ -53,11 +53,11 @@ function App() {
             </div>
           </Sider>
           <Layout className="site-layout" style={{ marginLeft: 200 }}>
-            <Header className="site-layout-background" style={{ padding: 0, backgroundColor: 'cyan' }} >
-              <span style={{ fontSize: '30pt' }}>Ha Ha Welcome</span>
+            <Header className="site-layout-background" style={{ padding: 0, backgroundColor: 'cyan' }} id="top">
+              <span style={{ fontSize: '30pt' }} title="What are you buying? What are you selling?">Ha Ha Welcome</span>
             </Header>
             <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-              <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }} id="top">
+              <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' }}>
                 <Switch>
                   <Route exact path="/" component={TodoList} />
                   <Route exact path="/done" component={DonePage} />
@@ -66,7 +66,7 @@ function App() {
               </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>
-              Ant Design ©2018 Created by Ant UED 
+              Beeny Design ©2077 Created by Benny Yuen 
               <Button type="primary" href="#top" style={{float:'right'}}>Goto Top</Button>
             </Footer>
           </Layout>
