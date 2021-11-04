@@ -25,16 +25,14 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <Layout>
-          <Sider
-            style={{
-              overflow: 'auto',
-              height: '100vh',
-              position: 'fixed',
-              left: 0,
-            }}
-          >
+          <Sider style={{
+            overflow: 'auto',
+            height: '100vh',
+            position: 'fixed',
+            left: 0,
+          }}>
             <div>
-              <img src={logo} alt="Tree" style={{height:'200px', width:'200px'}}/>
+              <img src={logo} alt="Tree" style={{ height: '200px', width: '200px' }} />
             </div>
             <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
               <Menu.Item key="1" icon={<PieChartOutlined />}>
@@ -47,7 +45,7 @@ function App() {
                 <Link to="/help" className="App-link">Help</Link>
               </Menu.Item>
             </Menu>
-            <div >
+            <div>
               <hr />
               <Button type="primary" href="#bottom">Goto Bottom</Button>
             </div>
@@ -65,9 +63,9 @@ function App() {
                 </Switch>
               </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>
-              Beeny Design ©2077 Created by Benny Yuen 
-              <Button type="primary" href="#top" style={{float:'right'}}>Goto Top</Button>
+            <Footer >
+              Benny Design ©2077 Created by Benny Yuen
+              <Button type="primary" href="#top" style={{ float: 'right' }}>Goto Top</Button>
             </Footer>
           </Layout>
         </Layout>
