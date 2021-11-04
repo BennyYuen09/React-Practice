@@ -22,7 +22,7 @@ function TodoGenerator() {
     return (
         <div className='TodoGenerator'>
             <span>New Todo: <input value={todoString} onChange={updateString}></input></span>
-            <Button type="primary" onClick={updateToStore}>Add</Button>
+            <Button type="primary" onClick={updateToStore} style={{margin:'5px'}}>Add</Button>
         </div>
     )
 }

@@ -37,7 +37,7 @@ function TodoItem({ todo }) {
     function edit() {
         setIsModalVisible(false);
         const newText = newString;
-        const newTodo = {id: todo.id, text: newText, finished: todo.finished };
+        const newTodo = { id: todo.id, text: newText, finished: todo.finished };
         API_PUT(newTodo)
             .then(response => dispatch({ type: CHANGE_TODOS, payload: response.data }));
     }
@@ -52,7 +52,7 @@ function TodoItem({ todo }) {
     };
 
     return (
-        <div className='TodoItem' >
+        <div className='TodoItem'>
             <span className={textClass} onClick={changeState}>{text}</span>
             <CloseCircleOutlined className='TodoItem-button' onClick={remove} />
 
