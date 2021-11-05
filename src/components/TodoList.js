@@ -4,12 +4,12 @@ import TodoGenerator from './TodoGenerator'
 import '../styles/TodoList.css'
 import { useDispatch } from "react-redux";
 import { INIT_TODOS } from "../reducers/todoReducer";
-import { API_GET } from "../apis/todos";
+import { getTodoByApi } from "../apis/todos";
 
 function TodoList() {
     const dispatch = useDispatch();
     useEffect(() => {
-        API_GET()
+        getTodoByApi()
         .then(response => dispatch({type: INIT_TODOS, payload: response.data}))
     })
 

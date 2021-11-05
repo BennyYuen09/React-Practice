@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { API_POST } from "../apis/todos";
+import { addTodoByApi } from "../apis/todos";
 import { APPEND_TODOS } from '../reducers/todoReducer'
 import '../styles/TodoGenerator.css'
 import 'antd/dist/antd.css';
@@ -16,7 +16,7 @@ function TodoGenerator() {
     }
 
     function updateToStore(){
-        API_POST(todoString).then(response => dispatch({type: APPEND_TODOS, payload: response.data}))
+        addTodoByApi(todoString).then(response => dispatch({type: APPEND_TODOS, payload: response.data}))
     }
 
     return (

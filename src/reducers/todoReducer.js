@@ -30,7 +30,7 @@ const todoAppend = (state, action) => {
 
 const todoRemove = (state, action) => {
     const newList = state.todoList.filter(item => {
-        return item.id !== action.payload.id
+        return item.id !== action.payload
     });
     return { todoList: newList }
 }
